@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ProducerConsumer.Controller">
+   <children>
+      <Pane fx:id="producer" layoutX="21.0" layoutY="47.0" prefHeight="200.0" prefWidth="156.0">
+         <children>
+            <Text layoutX="39.0" layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0" text="producer" />
+            <Text layoutX="39.0" layoutY="62.0" strokeType="OUTSIDE" strokeWidth="0.0" text="produce:" />
+            <Text fx:id="pitem" layoutX="53.0" layoutY="96.0" strokeType="OUTSIDE" strokeWidth="0.0" text="item" />
+            <Text layoutX="25.0" layoutY="131.0" strokeType="OUTSIDE" strokeWidth="0.0" text="time to produce:" />
+            <TextArea fx:id="timep" layoutX="24.0" layoutY="147.0" prefHeight="27.0" prefWidth="86.0" text="2" />
+         </children>
+      </Pane>
+      <Pane fx:id="consumer" layoutX="400.0" layoutY="47.0" prefHeight="200.0" prefWidth="200.0">
+         <children>
+            <Text fx:id="citem" layoutX="86.0" layoutY="97.0" strokeType="OUTSIDE" strokeWidth="0.0" text="item" />
+            <Text layoutX="72.0" layoutY="63.0" strokeType="OUTSIDE" strokeWidth="0.0" text="consume:" />
+            <Text layoutX="72.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="consumer" />
+            <TextArea fx:id="timec" layoutX="56.0" layoutY="151.0" prefHeight="27.0" prefWidth="86.0" text="5" />
+            <Text layoutX="46.0" layoutY="141.0" strokeType="OUTSIDE" strokeWidth="0.0" text="time to consume:" />
+         </children>
+      </Pane>
+      <Button layoutX="463.0" layoutY="328.0" mnemonicParsing="false" onAction="#start" text="start" />
+      <ListView fx:id="buffer" layoutX="193.0" layoutY="25.0" prefHeight="369.0" prefWidth="200.0" />
+      <Text layoutX="214.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="buffer" />
+      <Text layoutX="55.0" layoutY="271.0" strokeType="OUTSIDE" strokeWidth="0.0" text="buffer size" />
+      <TextArea fx:id="buffersize" layoutX="21.0" layoutY="281.0" prefHeight="35.0" prefWidth="134.0" text="10" />
+      <Text layoutX="427.0" layoutY="265.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+      <Text layoutX="409.0" layoutY="265.0" strokeType="OUTSIDE" strokeWidth="0.0" text="we random time between" />
+      <Text layoutX="409.0" layoutY="279.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0 to time to consum/ produce" />
+      <Text layoutX="409.0" layoutY="294.0" strokeType="OUTSIDE" strokeWidth="0.0" text="and add one seond" />
+   </children>
+</AnchorPane>

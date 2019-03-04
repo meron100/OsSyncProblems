@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ReaderWriter.Controller">
+   <children>
+      <ListView fx:id="readerList" layoutX="28.0" layoutY="57.0" prefHeight="267.0" prefWidth="124.0" />
+      <ListView fx:id="inFileList" layoutX="231.0" layoutY="57.0" prefHeight="267.0" prefWidth="124.0" />
+      <ListView fx:id="WriterList" layoutX="428.0" layoutY="57.0" prefHeight="267.0" prefWidth="124.0" />
+      <Text layoutX="49.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" text="readers" />
+      <Text layoutX="264.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" text="inside file" />
+      <Text layoutX="462.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" text="writers" />
+      <Button layoutX="264.0" layoutY="337.0" mnemonicParsing="false" onAction="#start" text="start" />
+      <Text layoutX="24.0" layoutY="348.0" strokeType="OUTSIDE" strokeWidth="0.0" text="time to read" />
+      <Text layoutX="27.0" layoutY="424.0" strokeType="OUTSIDE" strokeWidth="0.0" text="time intrval" />
+      <TextArea fx:id="timeread" layoutX="25.0" layoutY="363.0" prefHeight="27.0" prefWidth="114.0" text="2" />
+      <TextArea fx:id="readintrval" layoutX="25.0" layoutY="439.0" prefHeight="27.0" prefWidth="114.0" text="2" />
+      <TextArea fx:id="writerintrval" layoutX="426.0" layoutY="439.0" prefHeight="27.0" prefWidth="114.0" text="2" />
+      <TextArea fx:id="wtime" layoutX="426.0" layoutY="363.0" prefHeight="27.0" prefWidth="114.0" text="2" />
+      <Text layoutX="428.0" layoutY="424.0" strokeType="OUTSIDE" strokeWidth="0.0" text="time intrval" />
+      <Text layoutX="433.0" layoutY="348.0" strokeType="OUTSIDE" strokeWidth="0.0" text="time to write" />
+   </children>
+</AnchorPane>
