@@ -13,6 +13,11 @@
       <Pane layoutX="33.0" layoutY="23.0" prefHeight="359.0" prefWidth="531.0">
          <children>
             <Circle fx:id="table" fill="#de1fff" layoutX="266.0" layoutY="180.0" radius="100.0" stroke="BLACK" strokeType="INSIDE" />
+            <Line fx:id="p0p1Chopstick" endX="5.0" layoutX="326.0" layoutY="123.0" rotate="120.0" startX="-30.0" strokeLineCap="BUTT" strokeWidth="3.0" />
+            <Line fx:id="p1p2Chopstick" endX="5.0" layoutX="350.0" layoutY="205.0" rotate="20.0" startX="-30.0" strokeLineCap="BUTT" strokeWidth="3.0" />
+            <Line fx:id="p2p3Chopstick" endX="5.0" layoutX="282.0" layoutY="255.0" rotate="90.8" startX="-30.0" strokeLineCap="BUTT" strokeWidth="3.0" />
+            <Line fx:id="p3p4Chopstick" endX="5.0" layoutX="210.0" layoutY="209.0" rotate="-30.0" startX="-30.0" strokeLineCap="BUTT" strokeWidth="3.0" />
+            <Line fx:id="p4p0Chopstick" endX="5.0" layoutX="230.0" layoutY="122.0" rotate="48.8" startX="-30.0" strokeLineCap="BUTT" strokeWidth="3.0" />
             <Circle fx:id="p0" fill="DODGERBLUE" layoutX="266.0" layoutY="47.0" radius="26.0" stroke="BLACK" strokeType="INSIDE" />
             <Circle fx:id="p1" fill="DODGERBLUE" layoutX="399.0" layoutY="138.0" radius="26.0" stroke="BLACK" strokeType="INSIDE" />
             <Circle fx:id="p2" fill="DODGERBLUE" layoutX="366.0" layoutY="280.0" radius="26.0" stroke="BLACK" strokeType="INSIDE" />

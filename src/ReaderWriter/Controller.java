@@ -20,13 +20,13 @@ public class Controller implements Observer {
     @FXML
     ListView WriterList;
     @FXML
-    TextArea timeread;
+    TextArea timeRead;
     @FXML
-    TextArea readintrval;
+    TextArea readInterval;
     @FXML
-    TextArea writerintrval;
+    TextArea writerInterval;
     @FXML
-    TextArea wtime;
+    TextArea writeTime;
 
     volatile AtomicInteger wrt = new AtomicInteger(1);
     volatile AtomicInteger mutex = new AtomicInteger(1);
@@ -36,14 +36,14 @@ public class Controller implements Observer {
 
     public void start(){
 
-        int readerIntrval = Integer.valueOf(readintrval.getText());
-        int writerIntrval = Integer.valueOf(writerintrval.getText());
-        int timeRead = Integer.valueOf(timeread.getText());
-        int timeWrite = Integer.valueOf(wtime.getText());
+        int readerInterval = Integer.valueOf(readInterval.getText());
+        int writerInterval = Integer.valueOf(this.writerInterval.getText());
+        int timeRead = Integer.valueOf(this.timeRead.getText());
+        int timeWrite = Integer.valueOf(writeTime.getText());
 
 
-        Reader reader = new Reader(wrt, readCount, mutex, 0, timeRead, readerIntrval);
-        Writer writer = new Writer(wrt, 0, timeWrite, writerIntrval);
+        Reader reader = new Reader(wrt, readCount, mutex, 0, timeRead, readerInterval);
+        Writer writer = new Writer(wrt, 0, timeWrite, writerInterval);
 
         reader.addObserver(this);
         writer.addObserver(this);

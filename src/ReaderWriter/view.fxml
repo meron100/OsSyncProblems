@@ -18,12 +18,12 @@
       <Text layoutX="462.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" text="writers" />
       <Button layoutX="264.0" layoutY="337.0" mnemonicParsing="false" onAction="#start" text="start" />
       <Text layoutX="24.0" layoutY="348.0" strokeType="OUTSIDE" strokeWidth="0.0" text="time to read" />
-      <Text layoutX="27.0" layoutY="424.0" strokeType="OUTSIDE" strokeWidth="0.0" text="time intrval" />
-      <TextArea fx:id="timeread" layoutX="25.0" layoutY="363.0" prefHeight="27.0" prefWidth="114.0" text="2" />
-      <TextArea fx:id="readintrval" layoutX="25.0" layoutY="439.0" prefHeight="27.0" prefWidth="114.0" text="2" />
-      <TextArea fx:id="writerintrval" layoutX="426.0" layoutY="439.0" prefHeight="27.0" prefWidth="114.0" text="2" />
-      <TextArea fx:id="wtime" layoutX="426.0" layoutY="363.0" prefHeight="27.0" prefWidth="114.0" text="2" />
-      <Text layoutX="428.0" layoutY="424.0" strokeType="OUTSIDE" strokeWidth="0.0" text="time intrval" />
+      <Text layoutX="27.0" layoutY="424.0" strokeType="OUTSIDE" strokeWidth="0.0" text="time interval" />
+      <TextArea fx:id="timeRead" layoutX="25.0" layoutY="363.0" prefHeight="27.0" prefWidth="114.0" text="2" />
+      <TextArea fx:id="readInterval" layoutX="25.0" layoutY="439.0" prefHeight="27.0" prefWidth="114.0" text="2" />
+      <TextArea fx:id="writerInterval" layoutX="426.0" layoutY="439.0" prefHeight="27.0" prefWidth="114.0" text="2" />
+      <TextArea fx:id="writeTime" layoutX="426.0" layoutY="363.0" prefHeight="27.0" prefWidth="114.0" text="2" />
+      <Text layoutX="428.0" layoutY="424.0" strokeType="OUTSIDE" strokeWidth="0.0" text="time interval" />
       <Text layoutX="433.0" layoutY="348.0" strokeType="OUTSIDE" strokeWidth="0.0" text="time to write" />
    </children>
 </AnchorPane>
