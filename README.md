@@ -8,9 +8,9 @@ I implement the problems and the solutions to those problems and implement simpl
 
 I implement the problems and the solutions over threads and not over process to keep this more simple.
 
-#####Please feel free to send me your notes and thoughts.
+##### Please feel free to send me your notes and thoughts.
 
-#####meron100@gmail.com
+##### meron100@gmail.com
 
 ## Dining Philosopher
 There is five philosophers.
