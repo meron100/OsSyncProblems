@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/OsTrySync.iml" filepath="$PROJECT_DIR$/OsTrySync.iml" />
+      <module fileurl="file://$PROJECT_DIR$/OsSyncProblems.iml" filepath="$PROJECT_DIR$/OsSyncProblems.iml" />
     </modules>
   </component>
 </project>

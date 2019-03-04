@@ -12,6 +12,8 @@ import javafx.scene.text.Text;
 
 import java.util.Observable;
 import java.util.Observer;
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
 
 public class Controller implements Observer {
 
@@ -31,6 +33,8 @@ public class Controller implements Observer {
     Thread thread;
 
     Object mutex = new Object();
+
+    Lock lock = new ReentrantLock(true);
 
     public void start(){
 
@@ -53,7 +57,7 @@ public class Controller implements Observer {
     @Override
     public void update(Observable o, Object arg) {
         Platform.runLater(()->{
-
+            lock.lock();
                 if (o instanceof Producer) {
                     buffer.getItems().add(arg.toString());
                     pitem.setText(arg.toString());
@@ -64,6 +68,7 @@ public class Controller implements Observer {
                     citem.setText(item);
                 }
 
+                lock.unlock();
         });
     }
 }

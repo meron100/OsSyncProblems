@@ -9,6 +9,7 @@ public class Producer extends Observable implements Runnable{
    int counter = 0;
    Random random ;
    int timeToProduce;
+   private final String item = "item";
 
     public Producer(Buffer buffer, Object mutex, int timeToProduce) {
         this.buffer = buffer;
@@ -21,7 +22,7 @@ public class Producer extends Observable implements Runnable{
         try{Thread.sleep(random.nextInt(timeToProduce * 1000) + 1000);}// random time for produce
         catch (Exception e){}
         System.out.println("Producer produce item");
-        return "item " + counter++;
+        return item + counter++;
     }
 
     @Override

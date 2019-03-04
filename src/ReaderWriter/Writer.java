@@ -48,7 +48,7 @@ public class Writer extends Observable implements Runnable{
     public void write(){
         //for gui
         setChanged();
-        notifyObservers("write");
+        notifyObservers(Constants.WRITE);
 
         System.out.println("writer " + id + " is writing");
         try {Thread.sleep(random.nextInt(timeToWrite * 1000) + 1000);}
@@ -61,7 +61,7 @@ public class Writer extends Observable implements Runnable{
     public void run() {
         //for gui
         setChanged();
-        notifyObservers("run");
+        notifyObservers(Constants.RUN);
 
         waitWrt();
 
@@ -71,6 +71,6 @@ public class Writer extends Observable implements Runnable{
 
         //for gui
         setChanged();
-        notifyObservers("finish");
+        notifyObservers(Constants.FINISH);
     }
 }

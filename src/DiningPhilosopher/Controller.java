@@ -8,6 +8,8 @@ import javafx.scene.shape.Circle;
 import java.util.Arrays;
 import java.util.Observable;
 import java.util.Observer;
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
 
 public class Controller implements Observer {
 
@@ -24,9 +26,11 @@ public class Controller implements Observer {
     @FXML
     Circle table;
 
+    Lock lock = new ReentrantLock(true);
 
     @Override
     public void update(Observable o, Object arg) {
+       lock.lock();
         synchronized (this) {
 
             int i = ((Philosopher) o).i;
@@ -65,6 +69,7 @@ public class Controller implements Observer {
                     break;
             }
         }
+        lock.unlock();
     }
 
     public void start(){

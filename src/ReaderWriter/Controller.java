@@ -63,27 +63,27 @@ public class Controller implements Observer {
             lock.lock();
                 if (o instanceof Reader) {
                     int id = ((Reader) o).id;
-                    if (arg.equals("run")) {
+                    if (arg.equals(Constants.RUN)) {
                         readerList.getItems().add("reader " + id);
                     }
-                    if (arg.equals("read")) {
+                    if (arg.equals(Constants.READ)) {
                         readerList.getItems().remove("reader " + id);
                         inFileList.getItems().add("reader " + id);
                     }
-                    if (arg.equals("finish")) {
+                    if (arg.equals(Constants.FINISH)) {
                         inFileList.getItems().remove("reader " + id);
                     }
                 }
                 if (o instanceof Writer) {
                     int id = ((Writer) o).id;
-                    if (arg.equals("run")) {
+                    if (arg.equals(Constants.RUN)) {
                         WriterList.getItems().add("writer " + id);
                     }
-                    if (arg.equals("write")) {
+                    if (arg.equals(Constants.WRITE)) {
                         WriterList.getItems().remove("writer " + id);
                         inFileList.getItems().add("writer " + id);
                     }
-                    if (arg.equals("finish")) {
+                    if (arg.equals(Constants.FINISH)) {
                         inFileList.getItems().remove("writer " + id);
                     }
                 }

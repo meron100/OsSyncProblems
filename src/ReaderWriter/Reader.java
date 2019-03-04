@@ -41,7 +41,7 @@ public class Reader  extends Observable implements Runnable{
 
         //for gui
         setChanged();
-        notifyObservers("read");
+        notifyObservers(Constants.READ);
         try {Thread.sleep(random.nextInt(timeToRead * 1000) + 1000);}
         catch (Exception e){}
         System.out.println("reader " + id + " finish reading");
@@ -72,7 +72,7 @@ public class Reader  extends Observable implements Runnable{
     public void run() {
         //for gui
         setChanged();
-        notifyObservers("run");
+        notifyObservers(Constants.RUN);
 
             waitMutex();
             readcount.incrementAndGet();
@@ -91,6 +91,6 @@ public class Reader  extends Observable implements Runnable{
 
             //for gui
             setChanged();
-            notifyObservers("finish");
+            notifyObservers(Constants.FINISH);
     }
 }
