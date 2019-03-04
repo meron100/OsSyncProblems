@@ -31,8 +31,6 @@ public class Controller implements Observer {
     @Override
     public void update(Observable o, Object arg) {
        lock.lock();
-        synchronized (this) {
-
             int i = ((Philosopher) o).i;
             Philosopher.State state = ((Philosopher) o).getState();
             Circle circleToPaint = null;
@@ -68,7 +66,6 @@ public class Controller implements Observer {
                     Platform.runLater(()-> finalCircleToPaint3.setFill(Color.RED));
                     break;
             }
-        }
         lock.unlock();
     }
 

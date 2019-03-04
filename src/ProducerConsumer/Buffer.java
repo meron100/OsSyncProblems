@@ -5,11 +5,10 @@ import java.util.List;
 import java.util.Random;
 import java.util.concurrent.atomic.AtomicInteger;
 
-public class Buffer {
-    List<String> buffer;
+public class Buffer<T> {
+    List<Item<T>> buffer;
     AtomicInteger full;// INIT TO 0
     AtomicInteger empty;// init to n
-    Random random = new Random();
 
     public Buffer(Integer size) {
         this.full = new AtomicInteger(0);
@@ -17,11 +16,11 @@ public class Buffer {
         buffer = new ArrayList<>();
     }
 
-    public synchronized void add(String item){
+    public synchronized void add(Item<T> item){
         buffer.add(item);
     }
 
-    public String remove(){
+    public Item<T> remove(){
         return buffer.remove(0);
     }
 

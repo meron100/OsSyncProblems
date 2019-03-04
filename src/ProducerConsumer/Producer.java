@@ -4,31 +4,31 @@ import java.util.Observable;
 import java.util.Random;
 
 public class Producer extends Observable implements Runnable{
-   Buffer buffer;
+   Buffer<String> buffer;
    Object mutex;
    int counter = 0;
    Random random ;
    int timeToProduce;
    private final String item = "item";
 
-    public Producer(Buffer buffer, Object mutex, int timeToProduce) {
+    public Producer(Buffer<String> buffer, Object mutex, int timeToProduce) {
         this.buffer = buffer;
         this.mutex = mutex;
         random = new Random();
         this.timeToProduce = timeToProduce;
     }
 
-    public String produce(){
+    public Item<String> produce(){
         try{Thread.sleep(random.nextInt(timeToProduce * 1000) + 1000);}// random time for produce
         catch (Exception e){}
         System.out.println("Producer produce item");
-        return item + counter++;
+        return new Item<String>(item + counter++, buffer.full.get());
     }
 
     @Override
     public void run() {
         while (true){
-            String item = produce(); // produce item;
+            Item<String> item = produce(); // produce item;
             buffer.waitEmpty();
             synchronized (mutex){
                 buffer.add(item);
