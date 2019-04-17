@@ -4,6 +4,7 @@ import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
+import javafx.scene.shape.Line;
 
 import java.util.Arrays;
 import java.util.Observable;
@@ -23,8 +24,21 @@ public class Controller implements Observer {
     Circle p3;
     @FXML
     Circle p4;
+
     @FXML
     Circle table;
+
+    @FXML
+    Line p0p1Chopstick;
+    @FXML
+    Line p1p2Chopstick;
+    @FXML
+    Line p2p3Chopstick;
+    @FXML
+    Line p3p4Chopstick;
+    @FXML
+    Line p4p0Chopstick;
+
 
     Lock lock = new ReentrantLock(true);
 
@@ -34,36 +48,62 @@ public class Controller implements Observer {
             int i = ((Philosopher) o).i;
             Philosopher.State state = ((Philosopher) o).getState();
             Circle circleToPaint = null;
+            Line chopStickToPaint1 = null;
+            Line chopStickToPaint2 = null;
             switch (i) {
                 case 0:
                     circleToPaint = p0;
+                    chopStickToPaint1 = p0p1Chopstick;
+                    chopStickToPaint2 = p4p0Chopstick;
                     break;
                 case 1:
                     circleToPaint = p1;
+                    chopStickToPaint1 = p1p2Chopstick;
+                    chopStickToPaint2 = p0p1Chopstick;
                     break;
                 case 2:
                     circleToPaint = p2;
+                    chopStickToPaint1 = p2p3Chopstick;
+                    chopStickToPaint2 = p1p2Chopstick;
                     break;
                 case 3:
                     circleToPaint = p3;
+                    chopStickToPaint1 = p3p4Chopstick;
+                    chopStickToPaint2 = p2p3Chopstick;
                     break;
                 case 4:
                     circleToPaint = p4;
+                    chopStickToPaint1 = p4p0Chopstick;
+                    chopStickToPaint2 = p3p4Chopstick;
                     break;
             }
 
             switch (state) {
                 case EATING:
                     Circle finalCircleToPaint = circleToPaint;
-                    Platform.runLater(()-> finalCircleToPaint.setFill(Color.GREEN));
+                    Line finalChopStickToPaint = chopStickToPaint1;
+                    Line finalChopStickToPaint1 = chopStickToPaint2;
+                    Platform.runLater(()-> {finalCircleToPaint.setFill(Color.GREEN);
+                                            finalChopStickToPaint.setStroke(Color.GREEN);
+                                            finalChopStickToPaint1.setStroke(Color.GREEN);});
+
                     break;
                 case THINKING:
                     Circle finalCircleToPaint2 = circleToPaint;
-                    Platform.runLater(()-> finalCircleToPaint2.setFill(Color.BLUE));
+                    Line finalChopStickToPaint2 = chopStickToPaint1;
+                    Line finalChopStickToPaint3 = chopStickToPaint2;
+
+                    Platform.runLater(()-> {finalCircleToPaint2.setFill(Color.BLUE);
+                                            finalChopStickToPaint2.setStroke(Color.BLUE);
+                                            finalChopStickToPaint3.setStroke(Color.BLUE);});
                     break;
                 case HUNGRY:
                     Circle finalCircleToPaint3 = circleToPaint;
-                    Platform.runLater(()-> finalCircleToPaint3.setFill(Color.RED));
+                    Line finalChopStickToPaint4 = chopStickToPaint1;
+                    Line finalChopStickToPaint5 = chopStickToPaint2;
+                    Platform.runLater(()-> {finalCircleToPaint3.setFill(Color.RED);
+                                            finalChopStickToPaint4.setStroke(Color.RED);
+                                            finalChopStickToPaint5.setStroke(Color.RED);});
                     break;
             }
         lock.unlock();
